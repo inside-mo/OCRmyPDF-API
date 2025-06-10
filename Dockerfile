@@ -1,4 +1,4 @@
-FROM ghcr.io/ocrmypdf/ocrmypdf:latest
+FROM jbarlow83/ocrmypdf-alpine:latest
 
 # Add API dependencies
 COPY requirements.txt /app/requirements.txt
