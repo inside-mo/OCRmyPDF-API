@@ -1,6 +1,12 @@
-FROM ocrmypdf/ocrmypdf:latest
+FROM ghcr.io/ocrmypdf/ocrmypdf:latest
+
+# Add API dependencies
 COPY requirements.txt /app/requirements.txt
 WORKDIR /app
 RUN pip install --no-cache-dir -r requirements.txt
+
+# Add your API code
 COPY app.py /app/app.py
-CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "2016"]
+
+EXPOSE 8000
+CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000"]
