@@ -1,11 +1,12 @@
-FROM jbarlow83/ocrmypdf
+FROM jbarlow83/ocrmypdf-ubuntu:latest
 
-# Add API dependencies
+# Install pip (Ubuntu way)
+RUN apt-get update && apt-get install -y python3-pip
+
 COPY requirements.txt /app/requirements.txt
 WORKDIR /app
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip3 install --no-cache-dir -r requirements.txt
 
-# Add your API code
 COPY app.py /app/app.py
 
 EXPOSE 8000
