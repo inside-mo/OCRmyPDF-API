@@ -1,8 +1,5 @@
 FROM jbarlow83/ocrmypdf
 
-# Ensure pip is installed
-RUN apk add --no-cache py3-pip
-
 # Add API dependencies
 COPY requirements.txt /app/requirements.txt
 WORKDIR /app
