@@ -20,6 +20,7 @@ async def ocr_pdf(file: UploadFile = File(...)):
         subprocess.run([
             "ocrmypdf",
             "-l", "deu+eng",
+            "--force-ocr",
             "--sidecar", text_path,
             src_path, pdf_ocr_path
         ], check=True)
