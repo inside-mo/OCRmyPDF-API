@@ -12,4 +12,5 @@ RUN pip3 install --no-cache-dir --break-system-packages -r requirements.txt
 COPY app.py /app/app.py
 
 EXPOSE 2016
-CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000"]
+ENTRYPOINT []
+CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "2016"]
